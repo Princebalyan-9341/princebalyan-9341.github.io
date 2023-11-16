@@ -1,40 +1,18 @@
-// Function to animate elements on scroll
-function animateOnScroll() {
-    const elements = document.querySelectorAll('.animate');
-    elements.forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.3;
+document.addEventListener('DOMContentLoaded', function () {
+    // Get all elements with the 'animate' class
+    var animatedElements = document.querySelectorAll('.animate');
 
-        if (elementPosition < screenPosition) {
-            element.classList.add('animated');
-        } else {
-            element.classList.remove('animated');
-        }
+    // Initialize ScrollMagic controller
+    var controller = new ScrollMagic.Controller();
+
+    // Iterate through each animated element and create a ScrollMagic scene
+    animatedElements.forEach(function (element) {
+        new ScrollMagic.Scene({
+            triggerElement: element,
+            triggerHook: 0.8, // Adjust the triggerHook as needed
+            reverse: false // Change to true if you want the animation to reverse on scrolling up
+        })
+        .setClassToggle(element, 'active') // Add the 'active' class on scroll
+        .addTo(controller);
     });
-}
-
-// Function to toggle color on mouseover
-function toggleColorOnHover() {
-    const nameElement = document.getElementById('name');
-    nameElement.addEventListener('mouseover', function () {
-        this.style.color = getRandomColor();
-    });
-
-    nameElement.addEventListener('mouseout', function () {
-        this.style.color = 'white';
-    });
-}
-
-// Helper function to get a random color
-function getRandomColor() {
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for (let i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-}
-
-// Add event listeners
-window.addEventListener('scroll', animateOnScroll);
-document.addEventListener('DOMContentLoaded', toggleColorOnHover);
+});
