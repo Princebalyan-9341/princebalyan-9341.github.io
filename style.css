@@ -1,13 +1,9 @@
-/* ... (previous CSS code) ... */
-
-.animate {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: 0.5s ease-in-out;
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
 }
 
-.animated {
-    opacity: 1;
-    transform: translateY(0);
-}
-
+header {
+    background-color: #343a40;
+    color: #ffffff;
