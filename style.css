@@ -1,1 +1,13 @@
+/* ... (previous CSS code) ... */
+
+.animate {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.5s ease-in-out;
+}
+
+.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
 
