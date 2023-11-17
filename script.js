@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var controller = new ScrollMagic.Controller();
   // Create a TweenMax animation
   var tween = TweenMax.fromTo(
-    "#name",
+    "#headline",
     1,
     { opacity: 0, x: -100 },
     { opacity: 1, x: 0 }
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Create a ScrollMagic scene
   var scene = new ScrollMagic.Scene({
-    triggerElement: "#name", // The element that triggers the animation
+    triggerElement: "#headline", // The element that triggers the animation
     triggerHook: 0.5, // Trigger the animation at the center of the viewport
     reverse: false, // Allow the animation to reverse when scrolling up
   })
@@ -36,7 +36,7 @@ var profilePhotoScene = new ScrollMagic.Scene({
 
     
   // About Me Section Animation
-  var aboutTween = TweenMax.from("#about p", 1, { opacity: 0, y: 50 });
+  var aboutTween = TweenMax.from("#about", 1, { opacity: 0, y: 50 });
 
   var aboutScene = new ScrollMagic.Scene({
     triggerElement: "#about",
@@ -189,7 +189,7 @@ var profilePhotoScene = new ScrollMagic.Scene({
   var footerTween = TweenMax.from("footer p", 1, { opacity: 0, y: 50 });
 
   var footerScene = new ScrollMagic.Scene({
-    triggerElement: "footer",
+    triggerElement: "#languages",
     triggerHook: 0.8,
     reverse: false,
   })
